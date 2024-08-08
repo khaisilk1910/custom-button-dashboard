@@ -1,0 +1,1382 @@
+button_card_templates:
+  dashboard_buttons:
+    variables:
+      main_icon: mdi:countertop
+      main_background_color: >-
+        linear-gradient(157deg, rgba(246,220,131,1) 0%, rgba(247,139,243,1)
+        100%)
+      main_name_border_bottom: 3px groove rgba(255,218,180, 0.5)
+      main_card_img_cell_size: 200px
+      main_card_img_cell_margin: 0px 0px -80px -60px
+      main_icon_background: rgba(255,218,180,1)
+      main_name_margin: 10px 0px 0px 0px
+      main_name_font_color: rgba(0, 0, 0, 1)
+      main_name_font_size: 23px
+      main_name_font_weight: 600
+      main_icon_color: rgba(0, 0, 0, 1)
+      button_icon_color: rgba(0, 0, 0, 0.5)
+      button_icon_on_color: rgba(24, 188, 242, 1)
+      button_icon_on_background_color: rgba(255,218,180,0.5)
+      button_icon_background_color: rgba(255,218,180,0.5)
+      custom_button_icon_size: 45
+      custom_button_icon_margin: 0px 15px 0px 0px
+      custom_button_margin_vertical: 0px 0px 6px 0px
+      custom_second_size_button: 28
+      custom_second_button_margin: 10px 5px 0px 0px
+      custom_second_button_margin_horizonal: 0px 5px 0px 0px
+      extra_styles_icon: |-
+        @keyframes custom_second_button_animation {
+          0% { transform: scale(1); }
+          10% { transform: scale(1.1); }
+          17% { transform: scale(1.05); }
+          33% { transform: scale(1.40); }
+          60% { transform: scale(1); }
+        }
+        @keyframes light_animation {
+          0%, 100% {
+            clip-path: inset(0 0 0 0);
+          }
+          80% {
+            clip-path: ellipse(31% 40% at 50% 61%);
+          }
+        }
+        @keyframes fan_animation {
+          0%, 100% {
+            clip-path: inset(0 0 0 0);
+          }
+          40% {
+            clip-path: polygon(31% 11%, 68% 11%, 68% 22%, 56% 23%, 56% 42%, 61% 51%, 58% 57%, 61% 62%, 59% 72%, 41% 72%, 39% 64%, 5% 63%, 5% 51%, 41% 42%, 32% 23%);
+          }
+          80% {
+            clip-path: polygon(31% 11%, 68% 11%, 68% 22%, 56% 23%, 56% 42%, 90% 49%, 96% 57%, 87% 63%, 59% 72%, 41% 72%, 41% 60%, 45% 56%, 39% 51%, 41% 42%, 32% 23%);
+          }
+        }
+        @keyframes shake {
+          0%, 100% {
+            transform: rotate(0deg);
+            transform-origin: 50% 100%;
+          }
+          10% {
+            transform: rotate(2deg);
+          }
+          20%, 40%, 60% {
+            transform: rotate(-4deg);
+          }
+          30%, 50%, 70% {
+            transform: rotate(4deg);
+          }
+          80% {
+            transform: rotate(-2deg);
+          }
+          90% {
+            transform: rotate(2deg);
+          }
+        }
+      animation_icon_custom_second_button: custom_second_button_animation 1.3s ease-out infinite both
+      animation_icon_light: light_animation 1s linear 0s infinite alternate-reverse both
+      animation_icon_fan: fan_animation 0.1s linear 0s infinite alternate-reverse both
+      animation_washing: shake 400ms ease-in-out infinite
+    entity: '[[[ return variables.main_entity; ]]]'
+    icon: '[[[ return variables.main_icon; ]]]'
+    entity_picture: '[[[ return variables.main_image; ]]]'
+    name: '[[[ return variables.main_name; ]]]'
+    show_icon: false
+    show_name: true
+    show_state: false
+    show_last_changed: false
+    show_entity_picture: true
+    styles:
+      grid:
+        - grid-template-areas: '"n" "i"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: min-content 1fr
+      card:
+        - height: '[[[ return variables.main_card_height; ]]]'
+        - color: rgba(0, 0, 0, 1)
+        - padding: 0px 0px 0px 0px
+        - margin: 0px 0px 0px 0px
+        - align-self: middle
+        - justify-self: middle
+        - text-align: middle
+        - background: '[[[ return variables.main_background_color; ]]]'
+        - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+        - '--mdc-ripple-press-opacity': 0.4
+      img_cell:
+        - position: absolute
+        - border-radius: 50%
+        - width: '[[[ return variables.main_card_img_cell_size; ]]]'
+        - height: '[[[ return variables.main_card_img_cell_size; ]]]'
+        - align-self: end
+        - justify-self: start
+        - padding: 0px 0px 0px 0px
+        - margin: '[[[ return variables.main_card_img_cell_margin; ]]]'
+        - background: '[[[ return variables.main_icon_background; ]]]'
+      icon:
+        - align-self: end
+        - justify-self: end
+        - color: '[[[ return variables.main_icon_color; ]]]'
+        - width: '[[[ return variables.main_card_icon_size; ]]]'
+        - height: '[[[ return variables.main_card_icon_size; ]]]'
+        - padding: 0px 0px 0px 0px
+        - margin: '[[[ return variables.main_card_icon_margin; ]]]'
+      name:
+        - width: 100%
+        - border-bottom: '[[[ return variables.main_name_border_bottom; ]]]'
+        - font-size: '[[[ return variables.main_name_font_size; ]]]'
+        - font-weight: '[[[ return variables.main_name_font_weight; ]]]'
+        - color: '[[[ return variables.main_name_font_color; ]]]'
+        - text-align: start
+        - justify-self: start
+        - margin: '[[[ return variables.main_name_margin; ]]]'
+        - padding: 0px 0px 10px 20px
+      custom_fields:
+        main_button:
+          - position: absolute
+          - align-self: end
+          - justify-self: end
+          - margin: '[[[ return variables.custom_button_icon_margin; ]]]'
+          - width: 55%
+          - background: transparent
+        second_button:
+          - position: absolute
+          - align-self: start
+          - justify-self: end
+          - margin: '[[[ return variables.custom_second_button_margin; ]]]'
+        temp_humi:
+          - position: absolute
+          - display: |-
+              [[[
+                if ( variables.temp_entity == 'none' && variables.humi_entity == 'none' )
+                  return 'none';
+                else
+                  return ' ';
+              ]]]
+          - top: '[[[ return variables.temp_humi_margin_top; ]]]'
+          - left: '[[[ return variables.temp_humi_margin_left; ]]]'
+          - margin: 0px 0px 0px 0px
+    state:
+      - value: 'on'
+        styles:
+          img_cell:
+            - filter: hue-rotate(320deg) saturate(600%)
+    tap_action:
+      action: none
+    hold_action:
+      action: more-info
+    custom_fields:
+      temp_humi:
+        card:
+          type: custom:button-card
+          color_type: label-card
+          show_name: true
+          show_label: true
+          name: |-
+            [[[
+              if ( variables.air_quality_entity != 'none' )
+                return states[variables.air_quality_entity].state+'µg/m³';
+              else return '';
+            ]]]
+          label: |-
+            [[[
+              if ( variables.temp_entity != 'none' && variables.humi_entity != 'none' )
+                return states[variables.temp_entity].state+'°C - '+states[variables.humi_entity].state+'%';
+              else return '';
+            ]]]
+          styles:
+            card:
+              - border: none
+              - padding: 0px 0px 0px 0px
+              - margin: 0px 0px 0px 0px
+              - background: transparent
+              - border-radius: 0%
+            name:
+              - font-size: 14px
+              - font-weight: bold
+              - justify-self: start
+              - margin: 0px 0px 5px 0px
+              - color: '[[[ return variables.main_name_font_color; ]]]'
+            label:
+              - font-size: 14px
+              - justify-self: start
+              - font-weight: bold
+              - color: '[[[ return variables.main_name_font_color; ]]]'
+      main_button:
+        card:
+          type: custom:button-card
+          color_type: label-card
+          show_name: false
+          styles:
+            card:
+              - border: none
+              - padding: 0px 0px 0px 0px
+              - margin: 0px 0px 0px 0px
+              - background: transparent
+            grid:
+              - grid-template-areas: >-
+                  "custom_button1 custom_button2 custom_button3" "custom_button4
+                  custom_button5 custom_button6" "custom_button7 custom_button8
+                  custom_button9"
+              - grid-template-columns: 1fr 1fr 1fr
+              - grid-template-rows: min-content min-content min-content
+            custom_fields:
+              custom_button1:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button1 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button2:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button2 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button3:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button3 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button4:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button4 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button5:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button5 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button6:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button6 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button7:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button7 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button8:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button8 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_button9:
+                - margin: '[[[ return variables.custom_button_margin_vertical; ]]]'
+                - align-self: center
+                - justify-self: end
+                - display: |-
+                    [[[
+                      if ( variables.custom_button9 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+          custom_fields:
+            custom_button1:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button1; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button1 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button1; ]]]'
+                    spin: '[[[ return variables.custom_icon_button1_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button1_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button1_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button1_off; ]]]'
+                hold_action:
+                  action: more-info
+                tap_action:
+                  action: toggle
+            custom_button2:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button2; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button2 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button2; ]]]'
+                    spin: '[[[ return variables.custom_icon_button2_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button2_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button2_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button2_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+            custom_button3:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button3; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button3 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button3; ]]]'
+                    spin: '[[[ return variables.custom_icon_button3_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button3_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button3_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button3_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+            custom_button4:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button4; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button4 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button4; ]]]'
+                    spin: '[[[ return variables.custom_icon_button4_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button4_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button4_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button4_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+            custom_button5:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button5; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button5 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button5; ]]]'
+                    spin: '[[[ return variables.custom_icon_button5_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button5_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button5_washing == true )
+                                return variables.animation_washing;
+                              if ( variables.custom_icon_button5_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button5_off; ]]]'
+                hold_action:
+                  action: more-info
+                tap_action:
+                  action: toggle
+            custom_button6:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button6; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button6; ]]]'
+                    spin: '[[[ return variables.custom_icon_button6_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button6_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button6_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button6_off; ]]]'
+                hold_action:
+                  action: more-info
+                tap_action:
+                  action: toggle
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button6 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+            custom_button7:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button7; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button7 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button7; ]]]'
+                    spin: '[[[ return variables.custom_icon_button7_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button7_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button7_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button7_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+            custom_button8:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button8; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button8 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button8; ]]]'
+                    spin: '[[[ return variables.custom_icon_button8_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button8_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button8_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button8_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+            custom_button9:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_button9; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - height: '[[[ return variables.custom_button_icon_size+''px''; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_button9 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_button_icon_size-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button9; ]]]'
+                    spin: '[[[ return variables.custom_icon_button9_fan1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: |-
+                            [[[
+                              if ( variables.custom_icon_button9_fan == true )
+                                return variables.animation_icon_fan;
+                              if ( variables.custom_icon_button9_light == true )
+                                return variables.animation_icon_light;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_icon_button9_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+      second_button:
+        card:
+          type: custom:button-card
+          color_type: label-card
+          show_name: false
+          styles:
+            card:
+              - align-self: middle
+              - justify-self: end
+              - border: none
+              - padding: 0px 0px 0px 0px
+              - margin: 0px 0px 0px 0px
+              - background: rgba(80, 69, 69, 0)
+            grid:
+              - grid-template-areas: >-
+                  "custom_second_button1 custom_second_button2
+                  custom_second_button3 custom_second_button4
+                  custom_second_button5 custom_second_button6
+                  custom_second_button7 custom_second_button8"
+              - grid-template-columns: >-
+                  min-content min-content min-content min-content min-content
+                  min-content min-content min-content
+              - grid-template-rows: min-content
+            custom_fields:
+              custom_second_button1:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button1 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button2:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button2 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button3:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button3 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button4:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button4 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button5:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button5 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button6:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button6 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button7:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button7 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+              custom_second_button8:
+                - align-self: middle
+                - justify-self: end
+                - margin: >-
+                    [[[ return variables.custom_second_button_margin_horizonal;
+                    ]]]
+                - display: |-
+                    [[[
+                      if ( variables.custom_second_button8 == 'none' )
+                        return 'none'
+                      else
+                        return ''
+                    ]]]
+          custom_fields:
+            custom_second_button1:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button1; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button1 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button1; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button_custom_second_button;
+                            ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button1_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button2:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button2; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button2 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button2; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button2_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button3:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button3; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button3 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button3; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button3_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button4:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button4; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button4 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button4; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button4_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button5:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button5; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button5 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button5; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button5_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button6:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button6; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button6 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button6; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button6_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button7:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button7; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button7 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button7; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button7_off; ]]]'
+                tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+            custom_second_button8:
+              card:
+                type: custom:button-card
+                entity: '[[[ return variables.custom_second_button8; ]]]'
+                show_state: false
+                show_name: false
+                show_icon: true
+                extra_styles: '[[[ return variables.extra_styles_icon; ]]]'
+                styles:
+                  card:
+                    - width: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - height: '[[[ return variables.custom_second_size_button+"px"; ]]]'
+                    - border: 0px
+                    - border-radius: 50%
+                    - background: |-
+                        [[[ 
+                          if (variables.custom_second_button8 != "none")
+                            return variables.button_icon_background_color;
+                          return 'transparent';
+                        ]]]
+                    - '--mdc-ripple-color': rgba(180, 69, 69, 0.8)
+                    - '--mdc-ripple-press-opacity': 0.2
+                  icon:
+                    - width: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - height: >-
+                        [[[ return
+                        Math.floor(variables.custom_second_size_button-10)+'px';
+                        ]]]
+                    - border-radius: 50%
+                state:
+                  - value: 'on'
+                    color: '[[[ return variables.button_icon_on_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button8; ]]]'
+                    styles:
+                      card:
+                        - background: >-
+                            [[[ return
+                            variables.button_icon_on_background_color; ]]]
+                      icon:
+                        - animation: >-
+                            [[[ return
+                            variables.animation_icon_custom_second_button; ]]]
+                  - value: 'off'
+                    color: '[[[ return variables.button_icon_color; ]]]'
+                    icon: '[[[ return variables.custom_second_icon_button8_off; ]]]'
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
